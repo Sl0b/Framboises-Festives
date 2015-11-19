@@ -1,7 +1,38 @@
 .hidden {
-  display: none;
+  display: none !important;
 }
 
-.show {
+.menu {
   display: block;
+  position: absolute;
+  width: 30vw;
+  height: 100vh;
+  background-color: #9E9E9E;
+}
+
+.blur {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 70vw;
+  height: 100vh;
+}
+
+h1 {
+  margin: 0;
+}
+
+.portrait img {
+  border-radius: 50%;
+}
+
+.portrait {
+  border-bottom: 1px solid black;
+}
+
+.menu a {
+  color: black;
+  display: block;
+  margin: 5px;
 }
