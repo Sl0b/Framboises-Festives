@@ -6,7 +6,7 @@ Router.configure({
 Router.route('/', function () {
   this.render('Home', {
     data: function () {
-      console.log("coucou")
+      console.log();
     }
   });
 });
@@ -14,3 +14,11 @@ Router.route('/', function () {
 Router.route('plantage', {
   path: '/jardin/plantage'
 });
+
+Router.route('notifications');
+
+Router.route('jardin');
+
+Router.route('framboisiers');
+
+Router.route('compte');
