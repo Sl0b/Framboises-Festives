@@ -1,5 +1,3 @@
-Meteor.subscribe("framboisiers");
-
 Template.plantage.events({
   "submit .form-plantage": function (event) {
     // Prevent default browser form submit
