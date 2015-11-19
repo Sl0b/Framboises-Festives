@@ -2,4 +2,9 @@
   <header>
     {{ > nav title="Index"}}
   </header>
+  {{#each framboisiers}}
+    {{ title }}
+    {{ date }}
+    {{ maxParticipants }}
+  {{/each}}
 </template>
