@@ -5,3 +5,15 @@
 .show {
   display: block;
 }
+
+.form-plantage * {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+.form-plantage .inline {
+  display: inline;
+  width: auto;
+}
