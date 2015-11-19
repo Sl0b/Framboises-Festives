@@ -8,11 +8,13 @@ Meteor.methods({
     }
  
     Framboisiers.insert({
+      owner: Meteor.userId(),
       title: data.title,
       createdAt: new Date(),
       date: data.date,
       private: data.private,
       paying: data.paying,
+      actualParticipants: 0,
       maxParticipants: data.maxParticipants,
       description: data.description
     });
