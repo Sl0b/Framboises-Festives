@@ -16,7 +16,8 @@ Meteor.methods({
       paying: data.paying,
       actualParticipants: 0,
       maxParticipants: data.maxParticipants,
-      description: data.description
+      description: data.description,
+      participants: [Meteor.user().username]
     });
   },
   deleteFramboisier: function (framboisierId) {

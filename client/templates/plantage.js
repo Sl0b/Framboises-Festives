@@ -12,5 +12,7 @@ Template.plantage.events({
     console.log(data);
     
     Meteor.call('addFramboisier', data);
+    
+    Router.go('/');
   }
 })

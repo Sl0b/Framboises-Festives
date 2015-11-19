@@ -22,3 +22,7 @@ Router.route('jardin');
 Router.route('framboisiers');
 
 Router.route('compte');
+
+Router.route('/:id', {
+  template: 'oneFramboisier'
+});
