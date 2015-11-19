@@ -1,0 +1,13 @@
+<template name="plantage">
+  <form class="form-plantage">
+    <input type="text" name="title" placeholder="Nom du Framboisier" />
+    <input type="date" name="date" />
+    <input type="number" name="maxParticipants" placeholder="Nombre de participants limite (0 si illimité)" />
+    <label class="inline">Public</label><input class="inline" type="radio" name="private" value="false" />
+    <label class="inline">Privé</label><input class="inline" type="radio" name="private" value="true" /><br />
+    <label class="inline">Gratuit</label><input class="inline" type="radio" name="paying" value="false" />
+    <label class="inline">Payant</label><input class="inline" type="radio" name="paying" value="true" />
+    <textarea name="description" placeholder="Description"></textarea>
+    <input type="submit" value="Planter" />
+  </form>
+</template>

@@ -36,3 +36,15 @@ h1 {
   display: block;
   margin: 5px;
 }
+
+.form-plantage * {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+.form-plantage .inline {
+  display: inline;
+  width: auto;
+}

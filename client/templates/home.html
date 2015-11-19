@@ -1,10 +1,9 @@
 <template name="home">
-    <header>
-      {{ > nav title="Index"}}
-    </header>
-    {{#each framboisiers}}
-      {{ title }}
-      {{ date }}
-      {{ maxParticipants }}
-    {{/each}}
+  <header>
+    {{ > nav title="Index"}}
+  </header>
+  {{#each framboisiers}}
+    {{ title }}
+    ({{ actualParticipants }}/{{ maxParticipants }})
+  {{/each}}
 </template>

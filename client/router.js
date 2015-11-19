@@ -10,3 +10,7 @@ Router.route('/', function () {
     }
   });
 });
+
+Router.route('plantage', {
+  path: '/jardin/plantage'
+});

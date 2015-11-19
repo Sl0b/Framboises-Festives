@@ -6,3 +6,11 @@ Template.appBody.events({
     blur.classList.toggle("hidden");
   }
 })
+
+Template.appBody.helpers({
+  
+})
+
+Accounts.ui.config({
+  passwordSignupFields: "USERNAME_ONLY"
+});
