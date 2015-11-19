@@ -1,5 +1,3 @@
-Meteor.subscribe("framboisiers");
-
 Template.plantage.events({
   "submit .form-plantage": function (event) {
     // Prevent default browser form submit
@@ -12,5 +10,7 @@ Template.plantage.events({
     console.log(data);
     
     Meteor.call('addFramboisier', data);
+
+    Router.go('/');
   }
 })

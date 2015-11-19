@@ -1,22 +1,16 @@
 <template name="appBody">
-  <head>
-    <title>framboises-festives</title>
-  </head>
-
-  <body>
-    <div class="menu hidden">
-      {{> loginButtons}}
-      <div class="portrait">
-        <img class="pure-img" src="http://www.fancydressball.co.uk/big_images1/bald-skin-head-97664.jpg" alt="head">
-        <h3>Balthazar</h3>
-      </div>
-      <a href="/">Accueil</a>
-      <a href="/notifications">Notifications</a>
-      <a href="/jardin">Mon jardin</a>
-      <a href="/framboisiers">Mes framboisiers</a>
-      <a href="/compte">Mon compte</a>
+  <div class="menu hidden">
+    {{> loginButtons}}
+    <div class="portrait">
+      <img class="pure-img" src="http://www.fancydressball.co.uk/big_images1/bald-skin-head-97664.jpg" alt="head">
+      <h3>Balthazar</h3>
     </div>
-    <div class="blur hidden"></div>
-    {{ > yield }}
-  </body>
+    <a href="/">Accueil</a>
+    <a href="/notifications">Notifications</a>
+    <a href="/jardin">Mon jardin</a>
+    <a href="/framboisiers">Mes framboisiers</a>
+    <a href="/compte">Mon compte</a>
+  </div>
+  <div class="blur hidden"></div>
+  {{ > yield }}
 </template>
