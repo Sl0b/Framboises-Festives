@@ -1,11 +1,10 @@
 <template name="jardin">
-  <header>
-    {{ > nav title="Mon jardin"}}
-  </header>
-  <a href="/jardin/plantage">Planter un framboisier</a>
+  {{ > nav title="Mon jardin"}}
+
+  <button type="button" class="btn btn-success"><a href="/jardin/plantage">Planter un framboisier</a></button>
 
   {{#each framboisiers}}
     {{ > framboisier }}
   {{/each}}
-  
+
 </template>

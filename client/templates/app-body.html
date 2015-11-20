@@ -1,16 +1,16 @@
 <template name="appBody">
-  <div class="menu hidden">
+  <div class="menu hide animate">
     {{> loginButtons}}
     <div class="portrait">
       <img class="pure-img" src="http://www.fancydressball.co.uk/big_images1/bald-skin-head-97664.jpg" alt="head">
       <h3>Balthazar</h3>
     </div>
-    <a href="/">Accueil</a>
-    <a href="/notifications">Notifications</a>
-    <a href="/jardin">Mon jardin</a>
-    <a href="/framboisiers">Mes framboisiers</a>
-    <a href="/compte">Mon compte</a>
+    <a class="link" href="/"><span class="glyphicon glyphicon-home"></span>Accueil</a>
+    <a class="link" href="/notifications"><span class="glyphicon glyphicon-alert"></span>Notifications</a>
+    <a class="link" href="/jardin"><span class="glyphicon glyphicon-leaf"></span>Mon jardin</a>
+    <a class="link" href="/framboisiers"><span class="glyphicon glyphicon-tree-deciduous"></span>Mes framboisiers</a>
+    <a class="link" href="/compte"><span class="glyphicon glyphicon-user"></span>Mon compte</a>
   </div>
-  <div class="blur hidden"></div>
+  <div class="blur hide"></div>
   {{ > yield }}
 </template>

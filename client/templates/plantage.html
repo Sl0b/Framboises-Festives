@@ -1,17 +1,28 @@
 <template name="plantage">
-  <header>
-    {{ > nav title="Plantage" }}
-  </header>
-  <form class="form-plantage">
-    <input type="text" name="title" placeholder="Nom du Framboisier" required/>
-    <input type="date" name="date" required/>
-    <input type="number" name="maxParticipants" placeholder="Nombre de participants limite (0 si illimité)" />
-    <label class="inline">Public</label><input class="inline" type="radio" name="private" value="false" required/>
-    <label class="inline">Privé</label><input class="inline" type="radio" name="private" value="true" /><br />
-    <label class="inline">Gratuit</label><input class="inline" type="radio" name="paying" value="false" required/>
-    <label class="inline">Payant</label><input class="inline" type="radio" name="paying" value="true" />
-    <input type="text" name="description" placeholder="Description" required/>
-    <input type="submit" value="Planter" />
+
+  {{ > nav title="Plantage" }}
+
+  <form class="form-group form-plantage">
+    <input class="form-control" type="text" name="title" placeholder="Nom du Framboisier" required/>
+    <input class="form-control" type="date" name="date" required/>
+    <input class="form-control" type="number" name="maxParticipants" placeholder="Nombre de participants limite (0 si illimité)"/>
+    <div class="radio-div">
+      <label class="radio-inline inline">
+        <input class="inline" type="radio" name="private" value="false" required/> Public 
+      </label>
+      <label class="radio-inline inline">
+        <input class="inline" type="radio" name="private" value="true"/> Privé 
+      </label>
+      <br />
+      <label class="radio-inline inline">
+        <input class="inline" type="radio" name="paying" value="false" required/> Gratuit 
+      </label>
+      <label class="radio-inline inline">
+        <input class="inline" type="radio" name="paying" value="true" /> Payant 
+      </label>
+    </div>
+    <input class="form-control description" type="text" name="description" placeholder="Description" required/>
+    <input class="btn btn-success" type="submit" value="Planter"/>
   </form>
 
 </template>
