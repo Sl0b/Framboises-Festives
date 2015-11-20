@@ -4,7 +4,9 @@
   <button class="inscription" type="button">S'inscrire</button>
   <button class="desinscription" type="button">Se desinscrire</button>
   <form class="payer">
-    <input type="number" name="pay" placeholder="Payer!" />
+    {{ #if isOwner }}
+      <input type="number" name="pay" placeholder="Payer!" />
+    {{ /if }}
   </form>
   {{#each framboisiers.participants}}
     <li>{{ this }}</li>

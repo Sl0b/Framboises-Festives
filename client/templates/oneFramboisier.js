@@ -3,6 +3,10 @@ Meteor.subscribe("framboisiers");
 Template.oneFramboisier.helpers({
   framboisiers: function() {
     return Framboisiers.findOne({_id: Router.current().params.id});
+  },
+  isOwner: function() {
+    var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
+    return actualFramboisier.participants.indexOf(Meteor.user().username) == -1 ? false : true;
   }
 })
 
