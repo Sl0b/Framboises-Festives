@@ -3,5 +3,13 @@
     {{ > nav title=framboisiers.title }}
   </header>
   
-  {{ framboisiers.participants }}
+  <button class="inscription" type="button">S'inscrire</button>
+  <button class="desinscription" type="button">Se desinscrire</button>
+  <form class="payer">
+    <input type="number" name="pay" placeholder="Payer!" />
+  </form>
+  {{ framboisiers.owner }}
+  {{#each framboisiers.participants}}
+    <li>{{ this }}</li>
+  {{/each}}
 </template>

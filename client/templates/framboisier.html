@@ -2,7 +2,7 @@
   <div class="card">
     <h2>{{ title }}</h2>
     <h3>{{ date }}</h3>
-    <p>Actuellement {{ actualParticipants }} participants {{#if maxParticipants}}sur {{ maxParticipants }}{{/if}}</p>
+    <p>Actuellement {{ participants.length }} participants {{#if maxParticipants}}sur {{ maxParticipants }}{{/if}}</p>
     <p class="description">{{ description }}</p>
   </div>
 </template>
