@@ -18,9 +18,19 @@ Meteor.methods({
       description: data.description,
       participants: [Meteor.user().username],
       holdingPayments: [],
-      closedPayments: []
+      closedPayments: [],
+      announcements: []
     });
   },
+
+  addAnnouncement: function(framboisierId, title, text) {
+    var framboisier = Framboisiers.findOne(framboisierId);
+    var obj = {};
+    obj.title = title;
+    obj.text = text;
+    Framboisiers.update(framboisierId, {$push: {announcements: obj } });
+  },
+
   addParticipant: function(framboisierId, username) {
     var framboisier = Framboisiers.findOne(framboisierId);
     var today = new Date();

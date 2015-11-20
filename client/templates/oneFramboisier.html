@@ -10,8 +10,8 @@
   {{ /if }}
   <form class="payer form-group">
     {{ #if isParticipant }}
-      <input class="form-control" type="number" name="pay" placeholder="$$$" />
-      <button>Payer !</button>
+      <input required class="form-control" type="number" name="pay" placeholder="$$$" />
+      <button class="btn btn-primary">Payer !</button>
     {{ /if }}
   </form>
 
@@ -41,7 +41,17 @@
     </div>
 
   <div class="annoncements hidden">
-    <h3>Annoncements</h3>
+    {{ #each framboisiers.announcements }}
+      <h4>{{ this.title }}</h4>
+      <p>{{ this.text }}</p>
+    {{ /each }}
+    {{ #if isOwner }}
+    <form class="sendAnnoncement form-group">
+      <input required class="form-control" type="text" name="title" placeholder="title"/>
+      <input required class="form-control" type="text" name="text" placeholder="text"/>
+      <button class="btn btn-primary">Crier !</button>
+    </form>
+  {{ /if }}
   </div>
 
   </div>

@@ -51,5 +51,12 @@ Template.oneFramboisier.events({
       participants.classList.add("hidden");
       annoncements.classList.remove("hidden");
     }
+    },
+    "submit .sendAnnoncement": function(event) {
+      var framboisier = Framboisiers.findOne({_id: Router.current().params.id});
+      event.preventDefault();
+      Meteor.call('addAnnouncement', framboisier._id, event.target.title.value, event.target.text.value);
+      event.target.title.value = "";
+      event.target.text.value = "";
   }
 })
