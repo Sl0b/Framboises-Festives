@@ -2,7 +2,7 @@ Template.appBody.events({
   "click .blur": function() {
     hide();
   },
-  "click .menu a": function() {
+  "click .link": function() {
     hide();
   }
 })
@@ -18,6 +18,9 @@ Accounts.ui.config({
 function hide() {
   var menu = document.querySelector(".menu");
   var blur = document.querySelector(".blur");
-  menu.classList.toggle("hidden");
-  blur.classList.toggle("hidden");
+  menu.classList.toggle("hide");
+  blur.classList.toggle("hide");
+    menu.classList.toggle("visible");
+    blur.classList.toggle("visible");
+  menu.style.webkitTransform = "";
 }
