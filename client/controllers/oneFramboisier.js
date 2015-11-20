@@ -4,9 +4,19 @@ Template.oneFramboisier.helpers({
   framboisiers: function() {
     return Framboisiers.findOne({_id: Router.current().params.id});
   },
-  isParticipant: function(participants) {
+  isParticipant: function() {
     var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
     return actualFramboisier.participants.indexOf(Meteor.user().username) == -1 ? false : true;
+  },
+  hasPayed: function(user) {
+    var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
+    for (var i = 0; i < actualFramboisier.holdingPayments.length; i++) {
+      for (key in actualFramboisier.holdingPayments[i]) {
+        if (key == user) {
+          return true;
+        }
+      }
+    }
   }
 })
 

@@ -16,6 +16,10 @@
   <p>Actuellement {{ framboisiers.participants.length }} participants {{#if framboisiers.maxParticipants}}sur {{ framboisiers.maxParticipants }}{{/if}}</p>
 
   {{#each framboisiers.participants}}
-    <li {{#if }}style="color: orange"{{else}}{{#if }}style="color: green"{{else}}style="color: red"{{/if}}{{/if}}>{{ this }}</li>
+    {{#if hasPayed this}}
+      <li style="color: green">{{ this }}</li>
+    {{else}}
+      <li style="color: red">{{ this }}</li>
+    {{/if}}
   {{/each}}
 </template>
