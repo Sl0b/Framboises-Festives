@@ -1,7 +1,7 @@
 <template name="jardin">
   {{ > nav title="Mon jardin"}}
-    
-  <a href="/jardin/plantage">Planter un framboisier</a>
+
+  <button type="button" class="btn btn-success"><a href="/jardin/plantage">Planter un framboisier</a></button>
 
   {{#each framboisiers}}
     {{ > framboisier }}

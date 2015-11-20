@@ -148,3 +148,23 @@ header {
 .menu .glyphicon {
   margin-right: 10px;
 }
+
+.btn-success {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.btn-success a {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-success a:hover {
+  text-decoration: none;
+}
+
+.description {
+  height: 50px;
+}
