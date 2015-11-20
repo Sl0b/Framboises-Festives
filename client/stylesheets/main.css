@@ -168,3 +168,7 @@ header {
 .description {
   height: 50px;
 }
+
+.additional-link {
+  color: black !important;
+}

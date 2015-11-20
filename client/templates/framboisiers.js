@@ -1,14 +1,16 @@
 Meteor.subscribe("framboisiers");
 
-Template.jardin.helpers({
+Template.framboisiers.helpers({
   framboisiers: function() {
-    return Framboisiers.find({owner: Meteor.userId()});
+    return Framboisiers.find({
+      participants: Meteor.user().username
+    });
   }
 });
 
-Template.jardin.events({
+Template.framboisiers.events({
   "click .card": function (event) {
     
     Router.go('/' + this._id);
   }
-});
+})

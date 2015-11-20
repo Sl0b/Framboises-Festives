@@ -1,3 +1,7 @@
 <template name="framboisiers">
   {{ > nav title="Mes Framboisiers"}}
+
+  {{#each framboisiers}}
+    {{ > framboisier }}
+  {{/each}}
 </template>
