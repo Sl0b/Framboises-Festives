@@ -172,3 +172,27 @@ header {
 .additional-link {
   color: black !important;
 }
+
+.desinscription, .inscription {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.payer {
+  text-align: center;
+}
+
+.payer input {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.oneframboisier {
+  padding: 20px;
+  border: 2px #E30B5D solid;
+  border-radius: 10px;
+  margin: 20px;
+  margin-top: 0;
+}
