@@ -28,10 +28,32 @@
     {{ #if isOwner }}
       {{#each framboisiers.participants}}
         {{#if hasPayed this}}
-          <li style="color: green">{{ this }}</li>
+          <li class="seePayment" style="color: green">{{ this }}</li>
         {{else}}
-          <li style="color: red">{{ this }}</li>
+          {{#if isOnHold this}}
+            <li class="seePayment" style="color: orange" data-toggle="modal" data-target="#{{this}}">{{ this }}</li>
+          {{else}}
+            <li style="color: red">{{ this }}</li>
+          {{/if}}
         {{/if}}
+        <!-- Modal -->
+        <div class="modal fade" id='{{this}}' tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Validation du paiement de {{this}}</h4>
+              </div>
+              <div class="modal-body">
+                {{this}} demande validation d'un versement de {{userSumPaid this}}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary valider" data-dismiss="modal" value="{{this}}">Valider</button>
+              </div>
+            </div>
+          </div>
+        </div>
       {{/each}}
     {{ else }}
       {{#each framboisiers.participants}}

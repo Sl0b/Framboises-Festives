@@ -14,10 +14,40 @@ Template.oneFramboisier.helpers({
   },
   hasPayed: function(user) {
     var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
+    for (var i = 0; i < actualFramboisier.closedPayments.length; i++) {
+      for (key in actualFramboisier.closedPayments[i]) {
+        if (key == user) {
+          return true;
+        }
+      }
+    }
+  },
+  isOnHold: function(user) {
+    var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
     for (var i = 0; i < actualFramboisier.holdingPayments.length; i++) {
       for (key in actualFramboisier.holdingPayments[i]) {
         if (key == user) {
           return true;
+        }
+      }
+    }
+  },
+  userSumPaid: function(user) {
+    var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
+    for (var i = 0; i < actualFramboisier.holdingPayments.length; i++) {
+      for (key in actualFramboisier.holdingPayments[i]) {
+        if (key == user) {
+          return actualFramboisier.holdingPayments[i][key];
+        }
+      }
+    }
+  },
+  getUserSumObject: function(user) {
+    var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
+    for (var i = 0; i < actualFramboisier.holdingPayments.length; i++) {
+      for (key in actualFramboisier.holdingPayments[i]) {
+        if (key == user) {
+          return actualFramboisier.holdingPayments[i];
         }
       }
     }
@@ -30,6 +60,19 @@ Template.oneFramboisier.events({
   },
   "click .desinscription": function() {
     Meteor.call('removeParticipant', Router.current().params.id, Meteor.user().username);
+  },
+  "click .valider": function(event) {
+    var actualFramboisier = Framboisiers.findOne({_id: Router.current().params.id});
+    var getObject = function(user) {
+      for (var i = 0; i < actualFramboisier.holdingPayments.length; i++) {
+        for (key in actualFramboisier.holdingPayments[i]) {
+          if (key == user) {
+            return actualFramboisier.holdingPayments[i];
+          }
+        }
+      }
+    }
+    Meteor.call('validatePayment', actualFramboisier._id, getObject(event.target.value));
   },
   "submit .payer": function(event) {
     var framboisier = Framboisiers.findOne({_id: Router.current().params.id});
