@@ -1,11 +1,20 @@
 <template name="oneFramboisier">
   {{ > nav title=framboisiers.title }}
   
-  <button class="inscription" type="button">S'inscrire</button>
-  <button class="desinscription" type="button">Se desinscrire</button>
+  {{ #if isParticipant }}
+    <button class="desinscription" type="button">Se desinscrire</button>
+  {{ else }}
+    <button class="inscription" type="button">S'inscrire</button>
+  {{ /if }}
   <form class="payer">
-    <input type="number" name="pay" placeholder="Payer!" />
+    {{ #if isParticipant }}
+      <input type="number" name="pay" placeholder="Payer!" />
+    {{ /if }}
   </form>
+
+  <h4>{{ framboisiers.description }}</h4>
+  <p>Actuellement {{ framboisiers.participants.length }} participants {{#if framboisiers.maxParticipants}}sur {{ framboisiers.maxParticipants }}{{/if}}</p>
+
   {{#each framboisiers.participants}}
     <li {{#if }}style="color: orange"{{else}}{{#if }}style="color: green"{{else}}style="color: red"{{/if}}{{/if}}>{{ this }}</li>
   {{/each}}
