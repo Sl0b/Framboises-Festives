@@ -18,8 +18,9 @@ Template.oneFramboisier.events({
     Meteor.call('removeParticipant', Router.current().params.id, Meteor.user().username);
   },
   "submit .payer": function(event) {
+    var framboisier = Framboisiers.findOne({_id: Router.current().params.id});
     event.preventDefault();
-    console.log(framboisiers.owner);
-    Meteor.call('sendNotif', framboisiers.owner, event.target.pay.value);
+    Meteor.call('sendPay', framboisier._id, framboisier.owner, Meteor.user().username, event.target.pay.value);
+    event.target.pay.value = "";
   }
 })
